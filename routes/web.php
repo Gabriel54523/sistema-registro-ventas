@@ -46,8 +46,3 @@ Route::middleware(['auth'])->group(function () {
     Route::post('pedidos-artesano/{order}/estado', [OrderController::class, 'updateEstado'])->name('pedidos.artesano.estado');
     Route::get('factura/{order}', [OrderController::class, 'facturaPDF'])->name('factura.pdf');
 });
-
-Route::get('/run-migrations', function () {
-    Artisan::call('migrate', ['--force' => true]);
-    return 'Migraciones ejecutadas!';
-});
