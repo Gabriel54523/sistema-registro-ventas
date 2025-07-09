@@ -47,7 +47,3 @@ Route::middleware(['auth'])->group(function () {
     Route::get('factura/{order}', [OrderController::class, 'facturaPDF'])->name('factura.pdf');
 });
 
-Route::get('/run-migrations', function () {
-    Artisan::call('migrate', ['--force' => true]);
-    return 'Migraciones ejecutadas!';
-});
